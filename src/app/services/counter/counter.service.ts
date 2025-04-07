@@ -20,38 +20,46 @@ export class CounterService {
         
       })
 
-      effect(()=>{
-        console.log('E2 il contatore vale: ', this.counter(), ' e il doppio è: ', this.doubleCounter())
-        console.log(this.ciao())
-      })
+      // effect(()=>{
+      //   console.log('E2 il contatore vale: ', this.counter(), ' e il doppio è: ', this.doubleCounter())
+      //   console.log(this.ciao())
+      // })
 
 
-      this.ciao.update(str => str + ' world!')
+      // this.ciao.update(str => str + ' world!')
       
 
-      //this.counter.set(8);
+      // //this.counter.set(8);
 
-      setTimeout(() => {
-        this.counter.update(numb => numb + 100);
-      }, 1000);
+      // setTimeout(() => {
+      //   this.counter.update(numb => numb + 100);
+      // }, 1000);
 
 
-      setTimeout(() => {
-        this.ciao.set('pippo')
-      }, 2000);
+      // setTimeout(() => {
+      //   this.ciao.set('pippo')
+      // }, 2000);
 
       
 
 
-      // console.log('il contatore adesso vale: ', this.counter(), ' e il doppio è: ', this.doubleCounter())
+      // // console.log('il contatore adesso vale: ', this.counter(), ' e il doppio è: ', this.doubleCounter())
 
 
-      //this.counter.update(oldValue => oldValue + 1)
+      // //this.counter.update(oldValue => oldValue + 1)
 
 
-      // console.log('il contatore adesso vale: ', this.counter(), ' e il doppio è: ', this.doubleCounter())
+      // // console.log('il contatore adesso vale: ', this.counter(), ' e il doppio è: ', this.doubleCounter())
+  }
+  
+
+  addOne(){
+    this.counter.update(oldValue => oldValue + 1);
   }
 
+  removeOne(){
+    this.counter.update(oldValue => oldValue - 1);
+  }
 
 
 }

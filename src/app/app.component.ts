@@ -1,16 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CounterService } from './services/counter/counter.service';
+import { CounterComponent } from './components/counter/counter.component';
+import { ControlsComponent } from './components/controls/controls.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CounterComponent, ControlsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'intro-angular';
 
-  counterServ = inject(CounterService);
-  
 }
