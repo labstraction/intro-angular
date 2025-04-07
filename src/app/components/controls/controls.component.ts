@@ -19,4 +19,12 @@ export class ControlsComponent {
     this.counterServ.removeOne()
   }
 
+  play(){
+    this.counterServ.startInterval()
+  }
+
+  stop(){
+    this.counterServ.stopInterval()
+  }
+
 }

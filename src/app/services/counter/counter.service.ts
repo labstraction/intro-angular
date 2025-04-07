@@ -6,6 +6,8 @@ import { count } from 'rxjs';
 })
 export class CounterService {
 
+  interval: number = -1;
+
   ciao = signal('hello')
 
   counter = signal(0);
@@ -59,6 +61,26 @@ export class CounterService {
 
   removeOne(){
     this.counter.update(oldValue => oldValue - 1);
+  }
+
+  stopInterval() {
+    console.log('pippo', this.interval)
+    if (this.interval) {
+      window.clearInterval(this.interval)
+      this.interval = -1;
+    }
+
+  }
+
+  startInterval() {
+
+    if (this.interval === -1) {
+      console.log(this.interval)
+      this.interval = window.setInterval(() => {
+        this.counter.update(oldValue => oldValue + 1);
+      }, 1000);
+    }
+
   }
 
 
